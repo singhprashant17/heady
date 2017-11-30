@@ -3,8 +3,6 @@ package com.exmaple.heady.model;
 import com.exmaple.heady.utility.Constant;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
@@ -12,7 +10,7 @@ public class Categories extends RealmObject {
 
     private int id;
     private String name;
-    private List<Products> products;
+    private RealmList<Products> products;
     @SerializedName(Constant.Params.CHILD_CATEGORIES)
     private RealmList<Integer> childCategories;
 
@@ -32,12 +30,8 @@ public class Categories extends RealmObject {
         this.name = name;
     }
 
-    public List<Products> getProducts() {
+    public RealmList<Products> getProducts() {
         return products;
-    }
-
-    public void setProducts(List<Products> products) {
-        this.products = products;
     }
 
     public RealmList<Integer> getChildCategories() {
