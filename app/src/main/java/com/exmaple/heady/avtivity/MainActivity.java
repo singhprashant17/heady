@@ -1,7 +1,9 @@
-package com.exmaple.heady;
+package com.exmaple.heady.avtivity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.exmaple.heady.R;
 
 public class MainActivity extends AppCompatActivity {
 
