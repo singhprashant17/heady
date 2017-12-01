@@ -20,6 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".avtivity.ProductListActivity"/>
+        <activity android:name=".avtivity.ProductVariantActivity"/>
     </application>
 
 </manifest>

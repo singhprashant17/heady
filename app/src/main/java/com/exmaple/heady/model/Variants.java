@@ -1,9 +1,11 @@
 package com.exmaple.heady.model;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 public class Variants extends RealmObject {
 
+    @PrimaryKey
     private int id;
     private String color;
     private int size;

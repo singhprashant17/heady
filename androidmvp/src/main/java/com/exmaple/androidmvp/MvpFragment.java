@@ -2,24 +2,19 @@ package com.exmaple.androidmvp;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 
 /**
- * An abstract {@link BaseActivity} implementation which saves the presenter across configuration
- * change i.e. orientation.
- *
  * @param <P> type of Presenter class
  * @param <V> type of presenter-view class for binding the presenter whenever created/restored
  */
-public abstract class MvpActivity<P extends MvpPresenter<V>, V extends MvpView> extends
-        AppCompatActivity {
+public abstract class MvpFragment<P extends MvpPresenter<V>, V extends MvpView> extends Fragment {
     private P presenter;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        presenter = (P) getLastCustomNonConfigurationInstance();
         if (presenter == null) {
             presenter = getPresenterFactory().create();
         }
@@ -35,11 +30,6 @@ public abstract class MvpActivity<P extends MvpPresenter<V>, V extends MvpView> 
      */
     protected abstract void onPresenterCreatedOrRestored(P presenter);
 
-    @Override
-    public Object onRetainCustomNonConfigurationInstance() {
-        return presenter;
-    }
-
     public P getPresenter() {
         return presenter;
     }
@@ -51,7 +41,7 @@ public abstract class MvpActivity<P extends MvpPresenter<V>, V extends MvpView> 
     public abstract PresenterFactory<P> getPresenterFactory();
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         presenter.detach();
     }
