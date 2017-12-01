@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.exmaple.heady.R;
-import com.exmaple.heady.avtivity.ProductVariantActivity;
+import com.exmaple.heady.activity.ProductVariantActivity;
 import com.exmaple.heady.model.Products;
 
 import java.util.List;

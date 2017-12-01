@@ -1,4 +1,4 @@
-package com.exmaple.heady.avtivity;
+package com.exmaple.heady.activity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
