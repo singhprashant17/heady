@@ -1,6 +1,7 @@
 package com.exmaple.heady.presenter;
 
 import com.exmaple.androidmvp.MvpPresenter;
+import com.exmaple.heady.ApplicationClass;
 import com.exmaple.heady.R;
 import com.exmaple.heady.model.Response;
 import com.exmaple.heady.utility.Utility;
@@ -24,6 +25,7 @@ public class MainActivityPresenter implements MvpPresenter<MainActivityView> {
     private Subscription subscription;
 
     public MainActivityPresenter() {
+        ApplicationClass.getNetComponent().inject(this);
         subscription = Subscriptions.empty();
     }
 

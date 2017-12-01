@@ -13,18 +13,18 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module
 public class NetModule {
-    String mBaseUrl;
+    String baseUrl;
 
     // Constructor needs one parameter to instantiate.
     public NetModule(String baseUrl) {
-        this.mBaseUrl = baseUrl;
+        this.baseUrl = baseUrl;
     }
 
     @Provides
     @Singleton
     Retrofit provideRetrofit(OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
-                .baseUrl(mBaseUrl)
+                .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .client(okHttpClient)

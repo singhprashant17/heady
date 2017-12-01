@@ -1,7 +1,6 @@
 package com.exmaple.heady;
 
 import android.app.Application;
-import android.content.Context;
 
 import com.exmaple.heady.di.AppModule;
 import com.exmaple.heady.di.DaggerNetComponent;
@@ -12,10 +11,14 @@ import io.realm.Realm;
 
 public class ApplicationClass extends Application {
     private static ApplicationClass instance;
-    private NetComponent mNetComponent;
+    private static NetComponent mNetComponent;
 
-    public static synchronized Context getInstance() {
+    public static synchronized ApplicationClass getInstance() {
         return instance;
+    }
+
+    public static synchronized NetComponent getNetComponent() {
+        return mNetComponent;
     }
 
     @Override
