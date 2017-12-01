@@ -8,7 +8,8 @@ import com.exmaple.heady.view.MainActivityView;
 import com.exmaple.heady.webservice.ApiCallMethods;
 import com.exmaple.heady.webservice.ApiResponseSubscriber;
 import com.exmaple.heady.webservice.NoInternetException;
-import com.exmaple.heady.webservice.WebService;
+
+import javax.inject.Inject;
 
 import io.realm.Realm;
 import rx.Subscription;
@@ -17,6 +18,8 @@ import rx.schedulers.Schedulers;
 import rx.subscriptions.Subscriptions;
 
 public class MainActivityPresenter implements MvpPresenter<MainActivityView> {
+    @Inject
+    ApiCallMethods service;
     private MainActivityView view;
     private Subscription subscription;
 
@@ -36,7 +39,6 @@ public class MainActivityPresenter implements MvpPresenter<MainActivityView> {
     }
 
     public void getData() {
-        final ApiCallMethods service = WebService.createService(ApiCallMethods.class);
         subscription = service.getData()
                 .doOnSubscribe(() -> {
                     if (!Utility.checkNetwork()) {
