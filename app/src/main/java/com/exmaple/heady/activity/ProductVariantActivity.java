@@ -11,6 +11,7 @@ import com.exmaple.heady.R;
 import com.exmaple.heady.adapter.ProductVariantAdapter;
 import com.exmaple.heady.model.Variants;
 import com.exmaple.heady.presenter.ProductVariantActivityPresenter;
+import com.exmaple.heady.utility.Constant;
 import com.exmaple.heady.utility.Utility;
 import com.exmaple.heady.view.ProductVariantActivityView;
 
@@ -64,7 +65,7 @@ public class ProductVariantActivity extends MvpActivity<ProductVariantActivityPr
 
     @Override
     public int getProductId() {
-        return getIntent().getIntExtra("product_id", 0);
+        return getIntent().getIntExtra(Constant.BundleKeys.PRODUCT_ID, 0);
     }
 
     @Override

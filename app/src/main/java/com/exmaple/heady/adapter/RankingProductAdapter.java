@@ -17,6 +17,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.exmaple.heady.utility.Constant.BundleKeys.PRODUCT_ID;
+
 public class RankingProductAdapter extends RecyclerView.Adapter<RankingProductAdapter.ViewHolder> {
 
     private final List<ProductsX> products;
@@ -64,7 +66,7 @@ public class RankingProductAdapter extends RecyclerView.Adapter<RankingProductAd
             itemView.setOnClickListener(v -> {
                 final Context context = itemView.getContext();
                 final Intent intent = new Intent(context, ProductVariantActivity.class);
-                intent.putExtra("product_id", data.getId());
+                intent.putExtra(PRODUCT_ID, data.getId());
                 context.startActivity(intent);
             });
         }

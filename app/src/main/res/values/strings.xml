@@ -8,4 +8,7 @@
     <string name="variant_detail_format">Color : %s, Size : %d, Price : Rs. %d</string>
     <string name="ranking">Ranking</string>
     <string name="categories">Categories</string>
+    <string name="product_variant">Product Variants</string>
+    <string name="product_ranking">Product Rankings</string>
+    <string name="product_category">Product Category</string>
 </resources>

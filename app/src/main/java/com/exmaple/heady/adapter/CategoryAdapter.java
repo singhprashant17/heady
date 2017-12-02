@@ -17,6 +17,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.exmaple.heady.utility.Constant.BundleKeys.CATEGORY_ID;
+
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
 
     private final List<Categories> items;
@@ -66,7 +68,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
             itemView.setOnClickListener(v -> {
                 final Context context = itemView.getContext();
                 final Intent intent = new Intent(context, ProductListActivity.class);
-                intent.putExtra("category_id", data.getId());
+                intent.putExtra(CATEGORY_ID, data.getId());
                 context.startActivity(intent);
             });
         }

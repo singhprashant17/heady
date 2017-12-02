@@ -12,6 +12,7 @@ import com.exmaple.heady.R;
 import com.exmaple.heady.adapter.RankingProductAdapter;
 import com.exmaple.heady.model.ProductsX;
 import com.exmaple.heady.presenter.RankingListActivityPresenter;
+import com.exmaple.heady.utility.Constant;
 import com.exmaple.heady.utility.Utility;
 import com.exmaple.heady.view.RankingListActivityView;
 
@@ -64,7 +65,7 @@ public class RankingListActivity extends MvpActivity<RankingListActivityPresente
 
     @Override
     public String getRankingType() {
-        return getIntent().getStringExtra("ranking_type");
+        return getIntent().getStringExtra(Constant.BundleKeys.RANKING_TYPE);
     }
 
     @Override

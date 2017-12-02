@@ -12,6 +12,7 @@ import com.exmaple.heady.R;
 import com.exmaple.heady.adapter.ProductListAdapter;
 import com.exmaple.heady.model.Products;
 import com.exmaple.heady.presenter.ProductListActivityPresenter;
+import com.exmaple.heady.utility.Constant;
 import com.exmaple.heady.utility.Utility;
 import com.exmaple.heady.view.ProductListActivityView;
 
@@ -65,7 +66,7 @@ public class ProductListActivity extends MvpActivity<ProductListActivityPresente
 
     @Override
     public int getCategoryId() {
-        return getIntent().getIntExtra("category_id", 0);
+        return getIntent().getIntExtra(Constant.BundleKeys.CATEGORY_ID, 0);
     }
 
     @Override

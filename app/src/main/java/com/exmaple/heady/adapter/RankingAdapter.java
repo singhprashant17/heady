@@ -17,6 +17,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.exmaple.heady.utility.Constant.BundleKeys.RANKING_TYPE;
+
 public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHolder> {
 
     private final List<Rankings> rankings;
@@ -61,7 +63,7 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
 
             itemView.setOnClickListener(v -> {
                 final Intent intent = new Intent(context, RankingListActivity.class);
-                intent.putExtra("ranking_type", data.getRanking());
+                intent.putExtra(RANKING_TYPE, data.getRanking());
                 context.startActivity(intent);
             });
         }
