@@ -11,4 +11,6 @@
     <string name="product_variant">Product Variants</string>
     <string name="product_ranking">Product Rankings</string>
     <string name="product_category">Product Category</string>
+    <string name="product_ranking_format">Product ID : %d, No. of views : %d</string>
+    <string name="category_format">Category ID : %d, Name : %s</string>
 </resources>

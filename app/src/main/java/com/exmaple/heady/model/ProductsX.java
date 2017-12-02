@@ -4,9 +4,11 @@ import com.exmaple.heady.utility.Constant;
 import com.google.gson.annotations.SerializedName;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 public class ProductsX extends RealmObject {
 
+    @PrimaryKey
     private int id;
     @SerializedName(Constant.Params.VIEW_COUNT)
     private int viewCount;

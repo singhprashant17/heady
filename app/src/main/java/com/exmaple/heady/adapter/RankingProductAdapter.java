@@ -45,6 +45,7 @@ public class RankingProductAdapter extends RecyclerView.Adapter<RankingProductAd
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements ViewHolderBinder<ProductsX> {
+        private final Context context;
         @BindView(R.id.id)
         public TextView mIdView;
         @BindView(R.id.content)
@@ -52,6 +53,7 @@ public class RankingProductAdapter extends RecyclerView.Adapter<RankingProductAd
 
         public ViewHolder(View view) {
             super(view);
+            context = view.getContext();
             ButterKnife.bind(this, view);
         }
 
@@ -62,7 +64,8 @@ public class RankingProductAdapter extends RecyclerView.Adapter<RankingProductAd
 
         @Override
         public void bindData(ProductsX data, int position) {
-            mContentView.setText(String.valueOf(data.getViewCount()));
+            mContentView.setText(context.getString(R.string.product_ranking_format, data.getId(),
+                    data.getViewCount()));
             itemView.setOnClickListener(v -> {
                 final Context context = itemView.getContext();
                 final Intent intent = new Intent(context, ProductVariantActivity.class);

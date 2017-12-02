@@ -46,6 +46,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder implements
             ViewHolderBinder<Categories> {
+        private final Context context;
         @BindView(R.id.id)
         public TextView mIdView;
         @BindView(R.id.content)
@@ -53,6 +54,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
         public ViewHolder(View view) {
             super(view);
+            context = view.getContext();
             ButterKnife.bind(this, view);
         }
 
@@ -63,7 +65,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
         @Override
         public void bindData(Categories data, int position) {
-            mIdView.setText(data.getName());
+            mIdView.setText(context.getString(R.string.category_format, data.getId(),
+                    data.getName()));
 
             itemView.setOnClickListener(v -> {
                 final Context context = itemView.getContext();
