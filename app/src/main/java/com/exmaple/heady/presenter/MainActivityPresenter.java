@@ -6,11 +6,11 @@ import com.exmaple.heady.model.Response;
 import com.exmaple.heady.utility.Utility;
 import com.exmaple.heady.view.MainActivityView;
 import com.exmaple.heady.webservice.ApiCallMethods;
-import com.exmaple.heady.webservice.ApiResponseSubscriber;
 import com.exmaple.heady.webservice.NoInternetException;
 import com.exmaple.heady.webservice.WebService;
 
 import io.realm.Realm;
+import rx.SingleSubscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -36,7 +36,7 @@ public class MainActivityPresenter implements MvpPresenter<MainActivityView> {
     }
 
     public void getData() {
-        final ApiCallMethods service = WebService.createService(ApiCallMethods.class);
+        final ApiCallMethods service = WebService.createService();
         subscription = service.getData()
                 .doOnSubscribe(() -> {
                     if (!Utility.checkNetwork()) {
@@ -58,19 +58,22 @@ public class MainActivityPresenter implements MvpPresenter<MainActivityView> {
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(() ->
                         view.startLoading(view.getContext().getString(R.string.loading)))
-                .subscribe(new ApiResponseSubscriber<Response>() {
+                .subscribe(new SingleSubscriber<Response>() {
                     @Override
                     public void onSuccess(Response response) {
                         view.stopLoading();
-                        super.onSuccess(response);
                         view.displayCategories(response.getCategories());
                         view.displayRankings(response.getRankings());
                     }
 
                     @Override
                     public void onError(Throwable error) {
-                        super.onError(error);
+                        error.printStackTrace();
                         view.stopLoading();
+                        if (error instanceof NoInternetException) {
+                            Utility.displayToast(view.getContext()
+                                    .getString(R.string.no_internet_msg));
+                        }
                     }
                 });
     }

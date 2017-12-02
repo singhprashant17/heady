@@ -1,5 +1,7 @@
 package com.exmaple.heady.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.exmaple.heady.R;
+import com.exmaple.heady.activity.RankingListActivity;
 import com.exmaple.heady.model.Rankings;
-import com.exmaple.heady.utility.Utility;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,6 +42,7 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements ViewHolderBinder<Rankings> {
+        private final Context context;
         @BindView(R.id.id)
         public TextView mIdView;
         @BindView(R.id.content)
@@ -47,6 +50,7 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
 
         public ViewHolder(View itemView) {
             super(itemView);
+            context = itemView.getContext();
             ButterKnife.bind(this, itemView);
         }
 
@@ -55,7 +59,9 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
             mIdView.setText(data.getRanking());
 
             itemView.setOnClickListener(v -> {
-                Utility.displayToast("goto list by ranking");
+                final Intent intent = new Intent(context, RankingListActivity.class);
+                intent.putExtra("ranking_type", data.getRanking());
+                context.startActivity(intent);
             });
         }
     }

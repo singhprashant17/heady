@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".activity.ProductListActivity"/>
         <activity android:name=".activity.ProductVariantActivity"/>
+        <activity android:name=".activity.RankingListActivity">
+        </activity>
     </application>
 
 </manifest>
