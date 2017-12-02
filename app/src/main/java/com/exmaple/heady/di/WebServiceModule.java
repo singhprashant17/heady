@@ -12,11 +12,11 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module
-public class NetModule {
+public class WebServiceModule {
     String baseUrl;
 
     // Constructor needs one parameter to instantiate.
-    public NetModule(String baseUrl) {
+    public WebServiceModule(String baseUrl) {
         this.baseUrl = baseUrl;
     }
 
