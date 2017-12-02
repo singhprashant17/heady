@@ -64,14 +64,11 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         public void bindData(Products data, int position) {
             mIdView.setText(data.getName());
             mContentView.setText(data.getFormattedDate(OUTPUT_FORMAT));
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    final Context context = itemView.getContext();
-                    final Intent intent = new Intent(context, ProductVariantActivity.class);
-                    intent.putExtra("product_id", data.getId());
-                    context.startActivity(intent);
-                }
+            itemView.setOnClickListener(v -> {
+                final Context context = itemView.getContext();
+                final Intent intent = new Intent(context, ProductVariantActivity.class);
+                intent.putExtra("product_id", data.getId());
+                context.startActivity(intent);
             });
         }
     }

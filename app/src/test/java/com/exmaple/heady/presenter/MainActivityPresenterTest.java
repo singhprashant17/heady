@@ -16,8 +16,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
@@ -50,19 +48,9 @@ public class MainActivityPresenterTest {
         PowerMockito.mockStatic(WebService.class);
         PowerMockito.mockStatic(Utility.class);
         PowerMockito.when(Utility.checkNetwork())
-                .thenAnswer(new Answer<Boolean>() {
-                    @Override
-                    public Boolean answer(InvocationOnMock invocation) throws Throwable {
-                        return true;
-                    }
-                });
+                .thenAnswer(invocation -> true);
         PowerMockito.when(WebService.createService())
-                .then(new Answer<ApiCallMethods>() {
-                    @Override
-                    public ApiCallMethods answer(InvocationOnMock invocation) throws Throwable {
-                        return service;
-                    }
-                });
+                .then(invocation -> service);
 
         // Override RxJava schedulers
         RxJavaPlugins.getInstance()

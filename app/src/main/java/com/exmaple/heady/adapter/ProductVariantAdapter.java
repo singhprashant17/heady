@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.exmaple.heady.R;
 import com.exmaple.heady.model.Variants;
-import com.exmaple.heady.utility.Utility;
 
 import java.util.List;
 
@@ -58,10 +57,6 @@ public class ProductVariantAdapter extends RecyclerView.Adapter<ProductVariantAd
         public void bindData(Variants data, int position) {
             mIdView.setText(context.getString(R.string.variant_detail_format, data.getColor(),
                     data.getSize(), data.getPrice()));
-
-            itemView.setOnClickListener(v -> {
-                Utility.displayToast("goto list by ranking");
-            });
         }
     }
 }

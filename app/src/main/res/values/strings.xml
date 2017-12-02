@@ -6,4 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="variant_detail_format">Color : %s, Size : %d, Price : Rs. %d</string>
+    <string name="ranking">Ranking</string>
+    <string name="categories">Categories</string>
 </resources>
