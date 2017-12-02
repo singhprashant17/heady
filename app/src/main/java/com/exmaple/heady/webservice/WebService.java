@@ -9,9 +9,12 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class WebService {
+public final class WebService {
 
     private static Retrofit retrofit;
+
+    private WebService() {
+    }
 
     /**
      * basic retrofit instance generator

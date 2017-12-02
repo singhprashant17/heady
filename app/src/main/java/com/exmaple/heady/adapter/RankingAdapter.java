@@ -12,15 +12,16 @@ import com.exmaple.heady.R;
 import com.exmaple.heady.activity.RankingListActivity;
 import com.exmaple.heady.model.Rankings;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.realm.RealmResults;
 
 public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHolder> {
 
-    private final RealmResults<Rankings> rankings;
+    private final List<Rankings> rankings;
 
-    public RankingAdapter(RealmResults<Rankings> rankings) {
+    public RankingAdapter(List<Rankings> rankings) {
         this.rankings = rankings;
     }
 

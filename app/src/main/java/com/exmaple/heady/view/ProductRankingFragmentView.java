@@ -3,8 +3,8 @@ package com.exmaple.heady.view;
 import com.exmaple.androidmvp.MvpView;
 import com.exmaple.heady.model.Rankings;
 
-import io.realm.RealmResults;
+import java.util.List;
 
 public interface ProductRankingFragmentView extends MvpView {
-    void displayProductsByRanking(RealmResults<Rankings> rankings);
+    void displayProductsByRanking(List<Rankings> rankings);
 }

@@ -17,9 +17,10 @@ import com.exmaple.heady.presenter.ProductCategoryFragmentPresenter;
 import com.exmaple.heady.utility.Utility;
 import com.exmaple.heady.view.ProductCategoryFragmentView;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.realm.RealmResults;
 
 public class ProductCategoryFragment extends MvpFragment<ProductCategoryFragmentPresenter,
         ProductCategoryFragmentView> implements ProductCategoryFragmentView, ViewPagerFragment {
@@ -70,7 +71,7 @@ public class ProductCategoryFragment extends MvpFragment<ProductCategoryFragment
     }
 
     @Override
-    public void displayProductsByCategories(RealmResults<Categories> categories) {
+    public void displayProductsByCategories(List<Categories> categories) {
         recyclerView.setAdapter(new CategoryAdapter(categories));
     }
 }

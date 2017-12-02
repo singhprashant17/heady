@@ -15,9 +15,10 @@ import com.exmaple.heady.presenter.ProductListActivityPresenter;
 import com.exmaple.heady.utility.Utility;
 import com.exmaple.heady.view.ProductListActivityView;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.realm.RealmList;
 
 public class ProductListActivity extends MvpActivity<ProductListActivityPresenter,
         ProductListActivityView> implements ProductListActivityView {
@@ -68,7 +69,7 @@ public class ProductListActivity extends MvpActivity<ProductListActivityPresente
     }
 
     @Override
-    public void displayProducts(RealmList<Products> products) {
+    public void displayProducts(List<Products> products) {
         recyclerView.setAdapter(new ProductListAdapter(products));
     }
 }

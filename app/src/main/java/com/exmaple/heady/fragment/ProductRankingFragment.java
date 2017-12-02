@@ -16,9 +16,10 @@ import com.exmaple.heady.model.Rankings;
 import com.exmaple.heady.presenter.ProductRankingFragmentPresenter;
 import com.exmaple.heady.view.ProductRankingFragmentView;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.realm.RealmResults;
 
 public class ProductRankingFragment extends MvpFragment<ProductRankingFragmentPresenter,
         ProductRankingFragmentView> implements ProductRankingFragmentView, ViewPagerFragment {
@@ -69,7 +70,7 @@ public class ProductRankingFragment extends MvpFragment<ProductRankingFragmentPr
     }
 
     @Override
-    public void displayProductsByRanking(RealmResults<Rankings> rankings) {
+    public void displayProductsByRanking(List<Rankings> rankings) {
         recyclerView.setAdapter(new RankingAdapter(rankings));
     }
 }
