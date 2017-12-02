@@ -2,4 +2,15 @@
     <string name="app_name">Heady</string>
     <string name="no_internet_msg">Please check your Internet connection</string>
     <string name="loading">Loading</string>
+    <string name="title_activity_product_variant">ProductVariantActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="variant_detail_format">Color : %s, Size : %d, Price : Rs. %d</string>
+    <string name="ranking">Ranking</string>
+    <string name="categories">Categories</string>
+    <string name="product_variant">Product Variants</string>
+    <string name="product_ranking">Product Rankings</string>
+    <string name="product_category">Product Category</string>
+    <string name="product_ranking_format">Product ID : %d, No. of views : %d</string>
+    <string name="category_format">Category ID : %d, Name : %s</string>
 </resources>

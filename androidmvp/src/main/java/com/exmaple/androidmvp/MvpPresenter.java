@@ -5,7 +5,7 @@ package com.exmaple.androidmvp;
  *
  * @param <V> The view interface from underlying activity of fragment.
  */
-public interface MvpPresenter<V> {
+public interface MvpPresenter<V extends MvpView> {
     /**
      * This method represents the start of a contract with the view.
      * Mimics the onCreate() and/or onCreateView of Activity or Fragment.
