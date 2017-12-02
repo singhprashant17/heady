@@ -5,8 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 /**
- * An abstract {@link BaseActivity} implementation which saves the presenter across configuration
- * change i.e. orientation.
+ * Base class to all MVP adhering activities
  *
  * @param <P> type of Presenter class
  * @param <V> type of presenter-view class for binding the presenter whenever created/restored

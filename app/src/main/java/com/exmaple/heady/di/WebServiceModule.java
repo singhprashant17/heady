@@ -15,7 +15,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class WebServiceModule {
     String baseUrl;
 
-    // Constructor needs one parameter to instantiate.
     public WebServiceModule(String baseUrl) {
         this.baseUrl = baseUrl;
     }

@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
 /**
+ *  Base class to all MVP adhering fragments
+ *
  * @param <P> type of Presenter class
  * @param <V> type of presenter-view class for binding the presenter whenever created/restored
  */

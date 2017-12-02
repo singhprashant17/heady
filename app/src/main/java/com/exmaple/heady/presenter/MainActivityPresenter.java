@@ -43,11 +43,13 @@ public class MainActivityPresenter implements MvpPresenter<MainActivityView> {
     public void getData() {
         subscription = service.getData()
                 .doOnSubscribe(() -> {
+                    // chk if network available
                     if (!Utility.checkNetwork()) {
                         throw new NoInternetException();
                     }
                 })
                 .doOnSuccess(response -> {
+                    // write to DB
                     final Realm realm = Realm.getDefaultInstance();
                     try {
                         realm.executeTransaction(realm1 -> {

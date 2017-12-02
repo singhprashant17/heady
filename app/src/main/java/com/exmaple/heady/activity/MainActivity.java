@@ -70,12 +70,12 @@ public class MainActivity extends MvpActivity<MainActivityPresenter, MainActivit
 
     @Override
     public void displayCategories(List<Categories> categories) {
-        viewPagerAdapter.getRegisteredFragment(1).refresh();
+        viewPagerAdapter.getRegisteredFragment(1).updateFragment();
     }
 
     @Override
     public void displayRankings(List<Rankings> rankings) {
-        viewPagerAdapter.getRegisteredFragment(0).refresh();
+        viewPagerAdapter.getRegisteredFragment(0).updateFragment();
     }
 
     @Override

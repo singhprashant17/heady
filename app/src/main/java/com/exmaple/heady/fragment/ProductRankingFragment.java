@@ -50,7 +50,7 @@ public class ProductRankingFragment extends MvpFragment<ProductRankingFragmentPr
     }
 
     @Override
-    public void refresh() {
+    public void updateFragment() {
         getPresenter().getProductsByRanking();
     }
 

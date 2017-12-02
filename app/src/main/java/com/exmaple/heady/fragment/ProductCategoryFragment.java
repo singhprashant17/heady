@@ -51,7 +51,7 @@ public class ProductCategoryFragment extends MvpFragment<ProductCategoryFragment
     }
 
     @Override
-    public void refresh() {
+    public void updateFragment() {
         getPresenter().getProductsByCategory();
     }
 
